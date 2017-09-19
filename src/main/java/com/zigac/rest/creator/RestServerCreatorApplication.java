@@ -1,4 +1,4 @@
-package com.zigac.springvaadinskeleton;
+package com.zigac.rest.creator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +9,11 @@ import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.UI;
 
 @SpringBootApplication
-public class SpringVaadinSkeletonApplication
+public class RestServerCreatorApplication
 {
     public static void main(String[] args)
     {
-        SpringApplication.run(SpringVaadinSkeletonApplication.class, args);
+        SpringApplication.run(RestServerCreatorApplication.class, args);
     }
 
     @Theme("valo")

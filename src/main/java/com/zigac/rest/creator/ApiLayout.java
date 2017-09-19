@@ -1,4 +1,4 @@
-package com.zigac.springvaadinskeleton;
+package com.zigac.rest.creator;
 
 import java.util.Set;
 
