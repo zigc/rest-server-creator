@@ -92,7 +92,7 @@ public class ApiLayout extends VerticalLayout
         {
             stringBuilder.append(property.getEntity().getName() + "." + property.getName() + ", ");
         }
-        stringBuilder.append(" FROM " + properties.iterator().next().getEntity().getName());
+        stringBuilder.append(" FROM " + properties.stream().findFirst().get().getEntity().getName());
 
         return stringBuilder.toString();
     }
