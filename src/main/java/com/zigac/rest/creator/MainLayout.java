@@ -8,9 +8,10 @@ public class MainLayout extends HorizontalLayout
     {
         ApiLayout components = new ApiLayout();
         ModelLayout components1 = new ModelLayout();
+        GeneratedLayout generatedLayout = new GeneratedLayout();
 
         components1.addModelValueChangeListener(e -> components.setProperties(e));
 
-        addComponents(components1, components);
+        addComponents(components1, components, generatedLayout);
     }
 }

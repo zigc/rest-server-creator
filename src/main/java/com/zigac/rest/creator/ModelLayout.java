@@ -8,10 +8,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vaadin.data.HasValue;
+import com.vaadin.icons.VaadinIcons;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.CheckBoxGroup;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Layout;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 import com.zigac.model.Entity;
 import com.zigac.model.Property;
 import com.zigac.utils.MockEntity;
@@ -24,8 +29,27 @@ public class ModelLayout extends VerticalLayout
 
     public ModelLayout()
     {
+
+        addComponent(new Label("DB: "));
+        addComponent(createDBUI());
+
         addComponent(new Label("Response: "));
         MockEntity.createMockEntity().getEntities().forEach(entity -> addComponent(createList(entity)));
+    }
+
+    private Layout createDBUI()
+    {
+        TextField dbUrl = new TextField();
+        dbUrl.setIcon(VaadinIcons.LINK);
+        dbUrl.addStyleName(ValoTheme.TEXTFIELD_INLINE_ICON);
+        TextField dbUser = new TextField();
+        dbUser.setIcon(VaadinIcons.USER);
+        dbUser.addStyleName(ValoTheme.TEXTFIELD_INLINE_ICON);
+        TextField dbPass = new TextField();
+        dbPass.setIcon(VaadinIcons.LOCK);
+        dbPass.addStyleName(ValoTheme.TEXTFIELD_INLINE_ICON);
+
+        return new VerticalLayout(dbUrl, dbUser, dbPass);
     }
 
     private Component createList(Entity entity)
