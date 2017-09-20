@@ -2,7 +2,7 @@
 
 ## Web application generating code for Server REST API.
 
-Online: https://rest-server-creator.herokuapp.com/
+Online: https://rest-server-creator.herokuapp.com/ (first run might take a while if container is not allready running)
 
 Exposes DB with REST API with method business logic injection support and security.
 
